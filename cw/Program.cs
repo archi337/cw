@@ -133,32 +133,6 @@ namespace cw
         }
     }
 
-
-    Hier dummer TEXT! <- Das hier ist sehr doof!
-
-    florian hat einen kleinen
-
-
-        Philipp war hier
-
-
-        yes yes yeeeees
-
-
-
-
-
-
-                                             //pups gelassen
-
-
-
-
-                                             //tf is falsch hier
-
-
-
-//                                             .M
 //                                .:AMMO:
 //                       .:AMMMMMHIIIHMMM.
 //             ....   .AMMMMMMMMMMMHHHMHHMMMML:AMF"
@@ -211,4 +185,5 @@ namespace cw
 //                            HII.........
 //                             "H........
 //                               ......
+
 }
