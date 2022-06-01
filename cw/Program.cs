@@ -130,6 +130,9 @@ namespace cw
             //Console.WriteLine(ValidateSolution(board1));
 
             Console.ReadLine();
+
+            VonWegen wasd = new VonWegen();
+            wasd.IstArsch("yunus");
         }
     }
 
@@ -185,8 +188,5 @@ namespace cw
 //                            HII.........
 //                             "H........
 //                               ......
-
-
-    ////////BOAAAHHHHAAA CÜSSSSSS
 
 }
