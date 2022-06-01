@@ -124,7 +124,9 @@ namespace cw
                 {9, 7, 8, 3, 1, 2, 6, 4, 5}
             };
 
-            Console.WriteLine(ValidateSolution(board3)); 
+            Console.WriteLine(ValidateSolution(board1));
+            Console.WriteLine(ValidateSolution(board2));
+            Console.WriteLine(ValidateSolution(board3));
 
             //int test = 101956166;
             //formatDuration(test);
