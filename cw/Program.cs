@@ -125,8 +125,6 @@ namespace cw
             };
 
             Console.WriteLine(ValidateSolution(board1));
-            Console.WriteLine(ValidateSolution(board2));
-            Console.WriteLine(ValidateSolution(board3));
 
             //int test = 101956166;
             //formatDuration(test);
