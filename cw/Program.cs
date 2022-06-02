@@ -16,8 +16,8 @@ namespace cw
             string[] vs = new string[5];
             vs[4] = " second";
             vs[3] = " minute";
-            vs[2] = " day";
-            vs[1] = " week";
+            vs[2] = " hour";
+            vs[1] = " day";
             vs[0] = " year";
 
 
@@ -30,6 +30,11 @@ namespace cw
 
             string answer = "";
 
+            var counter = time.Where(x => x != 0).Count() - 1;
+            Console.WriteLine(counter);
+
+
+
             for (int i = 0; i <= 4; i++)
             {
                 if (time[i] == 0)
@@ -40,11 +45,19 @@ namespace cw
                 {
                     if (time[i] == 1)
                     {
-                        answer += time[i] + vs[i] + " ";
+                        if (counter > 1) answer += time[i] + vs[i] + ", ";
+                        else if (counter == 1) answer += time[i] + vs[i] + " and ";
+                        else answer += time[i] + vs[i];
+
+                        counter--;
                     }
                     else
                     {
-                        answer += time[i] + vs[i] + "s ";
+                        if (counter > 1) answer += time[i] + vs[i] + "s, ";
+                        else if (counter == 1) answer += time[i] + vs[i] + "s and ";
+                        else answer += time[i] + vs[i] + "s ";
+
+                        counter--;
                     }
                 }
             }
@@ -57,7 +70,7 @@ namespace cw
         static void Main()
         {
 
-            int test = 33243586;
+            int test = 3662;
             formatDuration(test);
 
             VonWegen vonWegen = new VonWegen();
