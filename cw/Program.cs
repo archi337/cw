@@ -9,72 +9,58 @@ namespace cw
 {
     internal class Program
     {
-        public static string formatDuration(int seconds)
+
+        //public static int getLoopSize(LoopDetector.Node startNode)
+        //{
+        //    return 0;
+        //}
+
+        //static int[] Rotate(int[] nums, int k)
+        //{
+        //    List<int> result = nums.ToList();
+
+        //    for (int i = 0; i < k; i++)
+        //    {
+        //        int temp = result[result.Count - 1];
+        //        result.Remove(temp);
+        //        result.Insert(0,temp);
+        //    }
+        //    foreach(int i in result)
+        //    {
+        //        Console.WriteLine(i);
+        //    }
+        //    nums = result.ToArray();
+        //    return nums;
+        //}
+
+        public static int LongestSlideDown(int[][] pyramid)
         {
-            if (seconds == 0) return "now";
+            int[][] max = pyramid;
 
-            string[] vs = new string[5];
-            vs[4] = " second";
-            vs[3] = " minute";
-            vs[2] = " hour";
-            vs[1] = " day";
-            vs[0] = " year";
-
-
-            int[] time = new int[5];
-            time[4] = seconds % 60;
-            time[3] = (seconds / 60) % 60;
-            time[2] = ((seconds / 60) / 60) % 24;
-            time[1] = (((seconds / 60) / 60) / 24) % 365;
-            time[0] = ((((seconds / 60) / 60) / 24) / 365);
-
-            string answer = "";
-
-            var counter = time.Where(x => x != 0).Count() - 1;
-            Console.WriteLine(counter);
-
-
-
-            for (int i = 0; i <= 4; i++)
+            for (int y = pyramid.Length - 2; y >= 0; y--)
             {
-                if (time[i] == 0)
+                for (int x = 0; x < pyramid[y].Length; x++)
                 {
-
-                }
-                else
-                {
-                    if (time[i] == 1)
-                    {
-                        if (counter > 1) answer += time[i] + vs[i] + ", ";
-                        else if (counter == 1) answer += time[i] + vs[i] + " and ";
-                        else answer += time[i] + vs[i];
-
-                        counter--;
-                    }
-                    else
-                    {
-                        if (counter > 1) answer += time[i] + vs[i] + "s, ";
-                        else if (counter == 1) answer += time[i] + vs[i] + "s and ";
-                        else answer += time[i] + vs[i] + "s ";
-
-                        counter--;
-                    }
+                    max[y][x] = pyramid[y][x] + Math.Max(pyramid[y + 1][x], pyramid[y + 1][x + 1]);
                 }
             }
-            Console.WriteLine(answer);
-            return answer;
+
+            return max[0][0];
         }
-
-
 
         static void Main()
         {
+            double a = 0.1;
+            double b = 0.2;
+            double c = a + b;
 
-            int test = 3662;
-            formatDuration(test);
+            Console.WriteLine("{0,17}", c);
 
-            VonWegen vonWegen = new VonWegen();
-            vonWegen.IstArsch("Arsch");
+            //int[] vs = { 1, 2, 3, 4, 5, 6 };
+            //Console.WriteLine(Rotate(vs, 3)); 
+
+            //VonWegen vonWegen = new VonWegen();
+            //vonWegen.IstArsch("Arsch");
 
             Console.ReadLine();
         }
